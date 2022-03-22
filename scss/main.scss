@@ -1,0 +1,353 @@
+@import "variables";
+@import "mixins";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: $bodyFont;
+  background: url(../images/bg-header-mobile.png) top no-repeat;
+  background-size: 100% auto;
+}
+
+.container {
+  width: min(85%, 45rem);
+  margin: 0 auto;
+  display: grid;
+  row-gap: 20rem;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: $heavyWeight;
+  color: $darkGreyBlue;
+}
+
+.subtext {
+  color: $greyBlue;
+  font-weight: $lightWeight;
+  font-size: $bodySize;
+  line-height: 1.6;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  align-items: center;
+  text-align: center;
+  padding-top: 15rem;
+  &__image {
+    height: auto;
+    width: 10rem;
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    &--green {
+      background-color: $strongCyan;
+    }
+    &--blue {
+      background-color: $lightBlue;
+    }
+    button {
+      font-family: $bodyFont;
+      padding: 1.5rem;
+      border: none;
+      outline: none;
+      border-radius: 2rem;
+      color: white;
+      font-weight: $heavyWeight;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.section-two {
+  display: grid;
+  text-align: center;
+  row-gap: 2rem;
+  &__image {
+    margin-top: 4rem;
+  }
+}
+
+.text-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  &__title {
+    font-size: 2.5rem;
+    color: $darkGreyBlue;
+    font-weight: $heavyWeight;
+  }
+  &__subtext {
+    line-height: 1.6;
+    font-size: 1.6rem;
+    color: $greyBlue;
+  }
+}
+
+.image-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-area: 1rem;
+  margin-top: 2rem;
+  gap: 2.5rem;
+  margin-bottom: 4rem;
+  &__title {
+    font-size: 2.5rem;
+    color: $darkGreyBlue;
+    font-weight: $heavyWeight;
+  }
+  &__subtext {
+    line-height: 1.6;
+    font-size: 1.6rem;
+    color: $greyBlue;
+  }
+}
+
+.section-three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+  &__image {
+    margin-top: 4rem;
+  }
+}
+
+.section-four {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    &__subtext {
+      margin-bottom: 6rem;
+    }
+  }
+}
+
+.section-five {
+  .logo-container {
+    width: min(40%, 45rem);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+}
+
+.section-six {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+    &--green {
+      background-color: $strongCyan;
+    }
+    &--blue {
+      background-color: $lightBlue;
+    }
+    button {
+      font-family: $bodyFont;
+      padding: 1.5rem;
+      border: none;
+      outline: none;
+      border-radius: 2rem;
+      color: white;
+      font-weight: $heavyWeight;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.footer {
+  margin-top: 10rem;
+  background-color: #f5f6f8;
+  display: flex;
+  padding: 5rem 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  text-align: center;
+  &__image {
+    height: auto;
+    width: 5rem;
+  }
+  &__links {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      list-style: none;
+      li {
+        font-size: 1.4rem;
+        color: $darkGreyBlue;
+        a {
+          text-decoration: none;
+          &:visited {
+            color: inherit;
+          }
+        }
+      }
+    }
+  }
+  &__socials {
+    display: flex;
+    gap: 2.5rem;
+    i {
+      font-size: 2.4rem;
+      color: $darkGreyBlue;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  body {
+    background: url(../images/bg-header-desktop.png) top no-repeat;
+    background-size: 100% auto;
+  }
+  .container {
+    width: min(85%, 75rem);
+    margin: 0 auto;
+    display: grid;
+    row-gap: 20rem;
+  }
+  .title {
+    font-size: 4rem;
+  }
+  .subtext {
+    font-size: 2rem;
+  }
+  .header {
+    &__buttons {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      button {
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+      }
+    }
+  }
+  .section-two {
+    margin-inline: -45rem;
+    &__subtext {
+      padding: 0 45rem;
+    }
+    &__text-section {
+      grid-area: text-section;
+    }
+    &__image {
+      grid-area: image;
+      width: 100rem;
+    }
+    &__cards {
+      grid-area: cards;
+      align-self: center;
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 6rem;
+      padding-right: 40rem;
+      .text-card {
+        align-items: flex-start;
+      }
+    }
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1fr 4fr);
+    grid-template-areas:
+      "text-section text-section"
+      "image cards";
+    row-gap: 4rem;
+    column-gap: 10rem;
+  }
+  .section-four {
+    margin-inline: -35rem;
+    gap: 2rem;
+    &__cards {
+      margin-top: 5rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      gap: 4rem;
+      .image-card {
+        flex: 1;
+      }
+    }
+  }
+  .section-five {
+    margin-inline: -35rem;
+    .logo-container {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+  }
+  .section-six {
+    &__buttons {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      button {
+        padding: 1.5rem 4rem;
+        border-radius: 10rem;
+      }
+    }
+  }
+  .footer {
+    flex-direction: row;
+    gap: 10rem;
+    justify-content: flex-start;
+    padding: 5rem 20rem;
+    &__links {
+      padding-right: 80rem;
+      ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        li {
+          font-size: 2rem;
+        }
+      }
+    }
+    &__socials {
+      margin-left: auto;
+    }
+  }
+}
